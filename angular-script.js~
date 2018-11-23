@@ -1,0 +1,115 @@
+
+var app = angular.module("myApp", []);
+
+app.controller("userController", function($scope) {
+	alert("userController...");
+	/*
+	$scope.userList=[{
+        'firstName' : $scope.firstName,
+        'lastName' : $scope.lastName,
+        'email' : $scope.email,
+        'contact' : $scope.contact,
+        'address' : $scope.address,
+        'description' : $scope.description 
+    }];*/
+	
+	$scope.message="Welcome to AngularJs";
+	
+});
+
+/*
+app.config(function($routeProvider, $locationProvider) {
+	alert("hello route...");
+	$routeProvider	
+	.when("/userform", {
+		templateUrl : "userForm.html",
+		controller : "userController"
+	})
+	.when("/loginform", {
+		templateUrl : "loginForm.html",
+		controller : "userController"
+	})
+	.when("/test",{
+		template:"ngView directive is used to display the HTML templates or views in the specified routes. Every time the current route changes"
+	})
+	.when("/home", {
+		templateUrl : "home.html",
+		controller : "userController"
+	})
+	.when('/photos/:id', {
+		templateUrl : 'templates/userForm.html',
+		controller : 'userController'
+	})
+	
+	.otherwise({
+		redirectTo : "home.html"
+	});
+	alert("hello...");
+	
+	//$locationProvider.html5Mode(true);
+	
+	
+	$locationProvider.html5Mode({
+		  enabled: true,
+		  requireBase: false
+		});
+	
+});
+*/
+
+
+
+
+/*
+app.controller('userListController', function($scope) {
+
+	$scope.userList=["Hari Singh","Sandeep","Nayan","Kiran","Rajesh","Mahesh","Chandru"];
+	
+});
+
+app.controller('ctrlController', function($scope,$log,$location) {
+
+	$scope.userList=["Hari Singh","Sandeep","Nayan","Kiran","Rajesh","Mahesh","Chandru"];
+	
+});
+ 
+ */
+/* 
+ 
+
+ app.controller('userController', function($scope, $http) {
+    // more angular JS codes will be here
+	$scope.showCreateForm = function(){
+	    // clear form
+	    $scope.clearForm();
+	    
+	    // clear variable / form values
+	    $scope.clearForm = function(){
+	        $scope.id = "";
+	        $scope.name = "";
+	        $scope.description = "";
+	        $scope.price = "";
+	    }
+	}
+    
+	
+	// create new product 
+	$scope.createProduct = function(){
+	    // fields in key-value pairs
+	    $http.post('create_product.php', {
+	            'name' : $scope.name, 
+	            'description' : $scope.description, 
+	            'price' : $scope.price
+	        }
+	    ).success(function (data, status, headers, config) {
+	        console.log(data);
+	    });
+	}
+   
+	
+	
+});
+ 
+ */
+ 
+ 

@@ -1,0 +1,11 @@
+<div class="container"> 
+
+
+<h2>Testing Page</h2>
+
+			<!-- <div class="col-md-8">
+                    <div ng-repeat="x in userList" class="list-group">
+                        <a ng-click="listIndex(x)" class="list-group-item list-group-item-info">{{ x.name }}</a>
+                    </div>
+			</div>  -->
+</div>

@@ -1,0 +1,63 @@
+<div class="row">
+      <div class="col-md-4">
+        <div ng-controller="topController as topCtrl">
+    			<h2><span>{{topCtrl.top}}</span></h2>
+    			<h3><span>{{topCtrl.someFactory.name}}</span></h3>
+    			<h4><span>{{topCtrl.someFactory.position}}</span></h4>
+    			<h5><span>{{topCtrl.someFactory.office}}</span></h5>
+    			<h5><span>{{topCtrl.someService.start_date}}</span></h5>
+    			<h3><span>{{topCtrl.someService.name}}</span></h3>
+    		</div> <!-- controller closed topController -->
+      </div>
+
+    
+    <div ng-controller="myController">
+      <div class="col-md-4">
+        <form ng-submit="saveFunction()"  name="myForm" novalidate>
+          <p>Id:<br>
+						<input type="text" name="id" ng-model="id" required>
+						<span style="color:red" ng-show="myForm.id.$dirty && myForm.id.$invalid">
+						<span ng-show="myForm.id.$error.required">Id is required.</span>
+						</span>
+					</p>
+					<p>Username:<br>
+						<input type="text" name="user" ng-model="user" required>
+						<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+						<span ng-show="myForm.user.$error.required">Username is required.</span>
+						</span>
+					</p>
+					<p>Email:<br>
+						<input type="email" name="email" ng-model="email" required>
+						<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+						<span ng-show="myForm.email.$error.required">Email is required.</span>
+						<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+						</span>
+					</p>
+					<p>
+            <!-- <button type="submit">Add</button> -->
+						<input type="submit" name="" ng-disabled="myForm.id.$dirty && myForm.id.$invalid || myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid">
+					</p>
+				</form>
+      </div>
+
+      <div class="col-md-4">
+      <table class="table">
+        <thead>
+          <tr class="danger">
+            <th>Id</th>
+            <th>User Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody ng-repeat="x in addIdUserEmail">   
+          <a><tr class="info">
+            <td>{{ x.id }}</td>
+            <td>{{ x.user }}</td>
+            <td>{{ x.email }}</td>
+          </tr></a>
+        </tbody>
+      </table>
+      </div>
+      
+  </div><!-- closed myController -->
+</div><!-- row ends here -->

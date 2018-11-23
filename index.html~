@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+<meta content="utf-8" http-equiv="encoding">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Angular Js</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+
+
+</head>
+<body ng-controller="userController">
+
+	<!-- <div ng-controller="userController"></div> -->
+	<ul class="nav nav-pills navbar-inverse">
+		<li role="presentation"><a href="#">Home</a></li>
+		<li role="presentation"><a href="#">Profile</a></li>
+		<li role="presentation"><a href="#">Messages</a></li>
+		<li role="presentation"><a href="#">Home</a></li>
+		<li role="presentation"><a href="#">Profile</a></li>
+		<li role="presentation"><a href="#">Messages</a></li>
+	</ul>
+
+	<div class="row">
+		<div class="col-md-2">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="home"><i class="fa fa-home fa-fw"></i>Home</a></li>
+				<li><a href="#/userform"><i class="fa fa-list-alt fa-fw"></i>User Form</a></li>
+				<li><a href="#/loginform"><i class="fa fa-file-o fa-fw"></i>LoginForm</a></li>
+				<li><a href="#/test"><i class="fa fa-bar-chart-o fa-fw"></i>Test</a></li>
+				<li><a href="/test"><i class="fa fa-table fa-fw"></i>Table</a></li>
+				
+				<li><a href="http://www.jquery2dotnet.com"><i
+						class="fa fa-tasks fa-fw"></i>Forms</a></li>
+				<li><a href="http://www.jquery2dotnet.com"><i
+						class="fa fa-calendar fa-fw"></i>Calender</a></li>
+				<li><a href="http://www.jquery2dotnet.com"><i
+						class="fa fa-book fa-fw"></i>Library</a></li>
+				<li><a href="http://www.jquery2dotnet.com"><i
+						class="fa fa-pencil fa-fw"></i>Applications</a></li>
+				<li><a href="http://www.jquery2dotnet.com"><i
+						class="fa fa-cogs fa-fw"></i>Settings</a></li>
+			</ul>
+		</div>
+	<!-- 	
+		<div class="container">
+			<div class="col-md-9 well">Vertical admin menu</div>
+			<div ng-view></div>
+		</div>
+		
+		 -->
+		
+		
+		
+		<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">				
+			<div class="col-md-4">
+				<h3 class="dark-grey">AngularJS Form</h3>
+				
+				<div class="form-group col-lg-9">
+					<label>Username</label>
+					<input type="text" ng-model="username" name="username" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group col-lg-9">
+					<label>Password</label>
+					<input type="password" ng-model="password" name="" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group col-lg-9">
+					<label>Contact</label>
+					<input type="text" ng-model="contact" name="" class="form-control" id="" value="">
+				</div>
+								
+				<div class="form-group col-lg-9">
+					<label>Email Address</label>
+					<input type="text" ng-model="email" name="" class="form-control" id="" value="">
+				</div>
+						
+				<div class="col-sm-9">
+					<input type="checkbox" class="checkbox" />Sigh up for our newsletter
+				</div>
+
+				<div class="form-group col-lg-6">
+					<button type="submit" ng-model="submit" class="btn btn-primary">Save</button>		
+				</div>
+					
+			</div>
+			
+			<div class="col-md-6">
+				<h3 class="dark-grey"><p>{{message}}</p></h3>
+				
+				<div class="form-group col-lg-6">
+					<label>User name:</label>
+					{{username}}
+				</div>
+				<button type="submit" class="btn btn-primary">Click Me</button>
+			
+				<p>Looping with ng-repeat:</p>
+  				<ul>
+    					<li ng-repeat="x in userList">
+      					{{ x }}
+    					</li>
+  				</ul>
+			
+			</div>
+		</div>
+	</section>
+
+</div>
+		
+		
+			
+		
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	
+<script src="angular-script.js"></script>
+</body>
+</html>

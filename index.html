@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+<meta content="utf-8" http-equiv="encoding">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Angular Js</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body>
+	<ul class="nav nav-pills navbar-inverse">
+		<li class="active"><a href="#/home"><i class="fa fa-home fa-fw"></i>Home</a></li>
+		<li><a href="#/userform"><i class="fa fa-list-alt fa-fw"></i>User Form</a></li>
+		<li><a href="#/testfile"><i class="fa fa-file-o fa-fw"></i>LoginForm</a></li>
+		<li><a href="#/testpage"><i class="fa fa-bar-chart-o fa-fw"></i>Test</a></li>
+		<li><a href="#/test"><i class="fa fa-table fa-fw"></i>Table</a></li>
+		<li><a href="#/userform1"><i class="fa fa-tasks fa-fw"></i>Forms</a></li>
+		<li><a href="#"><i	class="fa fa-calendar fa-fw"></i>Calender</a></li>
+		<li><a href="#"><i	class="fa fa-book fa-fw"></i>Library</a></li>
+		<li><a href="#"><i	class="fa fa-pencil fa-fw"></i>Applications</a></li>
+		<li><a href="#"><i	class="fa fa-cogs fa-fw"></i>Settings</a></li>
+	</ul>
+	<div class="container jumbotron">
+		<!-- Injection goes here -->
+		<div ng-view></div>
+	</div>
+    <div class="container">
+    
+    <!-- included file here -->
+    <div ng-include="'myFile.html'"></div>
+    
+
+	<div ng-controller="userController">
+	<div class="row">
+			<div class="col-md-4">
+				<div class="col-sm-9">
+                    <br>
+				</div>
+                <div class="form-group col-lg-9">
+                	<button ng-click="addUser()" ng-hide="editMode" class="btn btn-primary">Add</button>
+					<button ng-click="saveModeFun()" ng-show="editMode" class="btn btn-primary">Save</button>
+                    <button ng-click="editModeFun()" ng-hide="editMode" class="btn btn-primary">Edit</button>
+				</div>
+                <div class="form-group col-lg-9">
+					<label class="label label-default">Id:</label>
+                    <span class="label label-danger" ng-hide="editMode">{{extn}}</span>
+					<input type="text" ng-show="editMode" ng-model="extn" name="" class="form-control" id="" value="">
+				</div>
+				<div class="form-group col-lg-9">
+					<label class="label label-default">User Name:</label>
+                    <span class="label label-primary" ng-hide="editMode">{{name}}</span>
+					<input type="text" ng-show="editMode" ng-model="name"  name="" class="form-control" id="" value="">
+				</div>
+                <div class="form-group col-lg-9">
+					<label class="label label-default">Position:</label>
+                    <span class="label label-success" ng-hide="editMode">{{position}}</span>
+					<input type="text" ng-show="editMode" ng-model="position" name="" class="form-control" id="" value="">
+				</div>
+				<div class="form-group col-lg-9">
+					<label class="label label-default">Salary:</label>
+                    <span class="label label-info" ng-hide="editMode">{{salary}}</span>
+					<input type="text" ng-show="editMode" ng-model="salary" name="" class="form-control" id="" value="">
+				</div>
+				<div class="form-group col-lg-9">
+					<label class="label label-default">Start Date:</label>
+                    <span class="label label-warning" ng-hide="editMode">{{start_date}}</span>
+					<input type="text" ng-show="editMode" ng-model="start_date" name="" class="form-control" id="" value="">
+				</div>
+                <div class="form-group col-lg-9">
+					<label class="label label-default">Office:</label>
+                    <span class="label label-danger" ng-hide="editMode">{{office}}</span>
+					<input type="text" ng-show="editMode" ng-model="office" name="" class="form-control" id="" value="">
+				</div>
+			</div>
+
+			<div class="col-md-8">
+			<div class="form-group">
+			<h4>Search:</h4> 
+              <input type="text" ng-model="search" name="search" placeholder="Search id,name,position,office..." class="form-control" id="search">    
+			</div>
+            	<table class="table">
+    				<thead>
+      				<tr class="danger">
+        				<th>Id</th>
+        				<th>User Name</th>
+        				<th>Position</th>
+        				<th>Salary</th>
+        				<th>Start Date</th>
+        				<th>Office</th>
+        				<th>Delete</th>
+      				</tr>
+    			</thead>
+    			<tbody ng-repeat="x in userList | orderBy:'name' | filter: search ">   
+      				<a href="#"><tr ng-click="listIndex(x)" class="success">
+      					<td><a >{{ x.extn }}</a></td>
+        				<td><a >{{ x.name | uppercase }}</a></td>
+        				<td><a >{{ x.position | lowercase }}</a></td>
+        				<td><a >{{ x.salary | currency:'Rs ':2 }}</a></td>
+        				<td><a >{{ x.start_date | date:"dd/MM/yyyy" }}</a></td>
+        				<td><a >{{ x.office }}</a></td>
+        				<td><a style="color: red" href="#" ng-click="removeRow(x)">Delete</a></td>
+      				</tr></a>
+    			</tbody>
+  			</table>
+			</div>
+		
+    </div>
+    </div><!-- controller closed userController -->
+    <div ng-controller="bottomController">
+    	
+    <h2><span>{{bottom}}</span></h2>
+    <h3><span>{{someValue}}</span></h3>
+    <h4><span>{{someConstant}}</span></h4>
+    <h5><span>{{someConstant}}</span></h5>
+    	
+
+    </div> <!-- controller closed bottomController -->
+</div><!-- container closed-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!--1.2.32 package -->
+<script src="js2/angular.min.js"></script>
+<script src="js2/angular-route.min.js"></script> 
+
+<!-- 1.6.1 package-->
+<!-- <script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script> -->
+
+<script src="angular-script.js"></script>
+</body>
+</html>
